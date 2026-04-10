@@ -11,75 +11,229 @@
 </head>
 <body>
   <div class="page-shell">
-    <header class="hero">
+    <header class="hero" id="home">
       <nav class="topbar">
         <div class="brand">Avenix</div>
-        <div class="topbar-actions">
-          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
-            <span class="sun-icon">☀</span>
-            <span class="moon-icon">☾</span>
-          </button>
+        <div class="nav-links">
+          <a href="#about">About Us</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+          <a href="#auth">Login</a>
         </div>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
+          <span class="sun-icon">☀</span>
+          <span class="moon-icon">☾</span>
+        </button>
       </nav>
 
       <section class="hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Digital hub for local businesses</p>
-          <h1>One place for admin, users, and shops to stay connected.</h1>
+          <p class="eyebrow">Local business network dashboard</p>
+          <h1>Bring shoppers, shopkeepers, and admins into one digital local market.</h1>
           <p class="lead">
-            This app gives local shops and service centers a shared system where shoppers can order, shops can manage
-            products, and admins can see all account records in clean stack-style tables.
+            Avenix helps neighborhood shops create verified digital accounts, lets users discover trusted local stores,
+            and gives admins a live dashboard of account stacks, shop verification, and platform activity.
           </p>
-          <div class="role-pills">
-            <span>Admin control</span>
-            <span>User login</span>
-            <span>Shop login</span>
+          <div class="hero-actions">
+            <a class="button primary" href="#auth">Open Login</a>
+            <a class="button secondary" href="#about">Explore Details</a>
+          </div>
+          <div class="stats-strip">
+            <div class="stat-card">
+              <strong id="heroUserCount">0</strong>
+              <span>registered users</span>
+            </div>
+            <div class="stat-card">
+              <strong id="heroShopCount">0</strong>
+              <span>verified shops</span>
+            </div>
+            <div class="stat-card">
+              <strong id="heroOrderCount">0</strong>
+              <span>orders tracked</span>
+            </div>
           </div>
         </div>
 
-        <div class="login-card">
-          <p class="card-label">Login portal</p>
-          <h2>Choose how you want to enter</h2>
-          <form id="loginForm" class="login-form">
-            <label>
-              Role
-              <select id="role" required>
-                <option value="admin">Admin</option>
-                <option value="user">User</option>
-                <option value="shop">Shop</option>
-              </select>
-            </label>
-            <label>
-              Email
-              <input id="email" type="email" placeholder="admin@avenix.com" required>
-            </label>
-            <label>
-              Password
-              <input id="password" type="password" placeholder="Enter password" required>
-            </label>
-            <button class="button primary full" type="submit">Login</button>
-          </form>
-          <p class="helper-text">
-            Demo access: admin `admin@avenix.com`, user `aarav@market.com`, shop `fixfast@shops.com`
-          </p>
-          <p id="loginMessage" class="status-text"></p>
+        <div class="hero-panel">
+          <p class="card-label">Quick dashboard</p>
+          <h2>What the home page shows</h2>
+          <div class="mini-dashboard">
+            <div class="mini-tile">
+              <h3>About us</h3>
+              <p>Mission, reach, local trust, and shop support.</p>
+            </div>
+            <div class="mini-tile">
+              <h3>Contact</h3>
+              <p>Phone, email, office location, and shop onboarding help.</p>
+            </div>
+            <div class="mini-tile">
+              <h3>Login options</h3>
+              <p>Admin, user, and shopkeeper access from one panel.</p>
+            </div>
+            <div class="mini-tile">
+              <h3>Verification</h3>
+              <p>Shop image and Aadhaar image capture for approvals.</p>
+            </div>
+          </div>
         </div>
       </section>
     </header>
 
     <main class="dashboard-grid">
+      <section class="section wide-panel" id="about">
+        <div class="section-heading">
+          <p class="eyebrow">About us</p>
+          <h2>Why Avenix exists</h2>
+          <p class="lead small">
+            We help local markets become digital without losing local identity. Users get trusted nearby services, shopkeepers
+            get a verified presence, and admins can watch every record in a structured dashboard.
+          </p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Trusted local discovery</h3>
+            <p>Users can find neighborhood shops, mechanic services, daily needs, and order directly from a local catalog.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Verified shop onboarding</h3>
+            <p>Every shopkeeper profile can include a shop photo and Aadhaar photo before appearing in admin records.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Admin stack records</h3>
+            <p>Admins can review user records, mechanic and shopkeeper accounts, and recent order activity from one place.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section wide-panel" id="services">
+        <div class="section-heading">
+          <p class="eyebrow">Services</p>
+          <h2>Built for daily local business activity</h2>
+        </div>
+        <div class="service-grid">
+          <div class="service-card">
+            <h3>For users</h3>
+            <p>Create an account, browse local products, and place quick orders.</p>
+          </div>
+          <div class="service-card">
+            <h3>For shopkeepers</h3>
+            <p>Register a shop, upload verification proofs, and manage inventory.</p>
+          </div>
+          <div class="service-card">
+            <h3>For admins</h3>
+            <p>Monitor records, check verification status, and track recent orders in tables.</p>
+          </div>
+        </div>
+      </section>
+
       <section class="section panel shopper-panel">
         <div class="section-heading compact">
-          <p class="eyebrow">User area</p>
-          <h2>Shopper storefront</h2>
+          <p class="eyebrow">Storefront</p>
+          <h2>Browse local products</h2>
         </div>
         <div class="catalog-grid" id="catalogGrid"></div>
       </section>
 
+      <section class="section panel" id="auth">
+        <div class="section-heading compact">
+          <p class="eyebrow">Login page</p>
+          <h2>Login with your role</h2>
+        </div>
+        <form id="loginForm" class="stack-form">
+          <label>
+            Role
+            <select id="role" required>
+              <option value="admin">Admin</option>
+              <option value="user">User</option>
+              <option value="shop">Shopkeeper</option>
+            </select>
+          </label>
+          <label>
+            Email
+            <input id="email" type="email" placeholder="admin@avenix.com" required>
+          </label>
+          <label>
+            Password
+            <input id="password" type="password" placeholder="Enter password" required>
+          </label>
+          <button class="button primary full" type="submit">Login</button>
+        </form>
+        <p class="helper-text">
+          Demo access: admin `admin@avenix.com`, user `aarav@market.com`, shopkeeper `fixfast@shops.com`
+        </p>
+        <p id="loginMessage" class="status-text"></p>
+      </section>
+
       <section class="section panel">
         <div class="section-heading compact">
-          <p class="eyebrow">Place order</p>
-          <h2>User order form</h2>
+          <p class="eyebrow">Create user account</p>
+          <h2>User signup</h2>
+        </div>
+        <form id="userSignupForm" class="stack-form">
+          <label>
+            Full name
+            <input id="signupUserName" type="text" placeholder="Priya Nair" required>
+          </label>
+          <label>
+            Email
+            <input id="signupUserEmail" type="email" placeholder="priya@market.com" required>
+          </label>
+          <label>
+            Phone
+            <input id="signupUserPhone" type="text" placeholder="9876543210" required>
+          </label>
+          <label>
+            Password
+            <input id="signupUserPassword" type="password" placeholder="Create password" required>
+          </label>
+          <button class="button secondary full" type="submit">Create user account</button>
+        </form>
+        <p id="userSignupMessage" class="status-text"></p>
+      </section>
+
+      <section class="section panel">
+        <div class="section-heading compact">
+          <p class="eyebrow">Create shopkeeper account</p>
+          <h2>Shopkeeper signup with verification</h2>
+        </div>
+        <form id="shopSignupForm" class="stack-form">
+          <label>
+            Shop name
+            <input id="signupShopName" type="text" placeholder="Metro Mechanic Point" required>
+          </label>
+          <label>
+            Owner name
+            <input id="signupShopOwner" type="text" placeholder="Rahul Das" required>
+          </label>
+          <label>
+            Shop type
+            <input id="signupShopType" type="text" placeholder="Mechanic, grocery, tailoring" required>
+          </label>
+          <label>
+            Email
+            <input id="signupShopEmail" type="email" placeholder="metro@shops.com" required>
+          </label>
+          <label>
+            Password
+            <input id="signupShopPassword" type="password" placeholder="Create password" required>
+          </label>
+          <label>
+            Upload shop photo
+            <input id="shopPhoto" type="file" accept="image/*" required>
+          </label>
+          <label>
+            Upload Aadhaar photo
+            <input id="aadharPhoto" type="file" accept="image/*" required>
+          </label>
+          <button class="button primary full" type="submit">Create shopkeeper account</button>
+        </form>
+        <p id="shopSignupMessage" class="status-text"></p>
+      </section>
+
+      <section class="section panel">
+        <div class="section-heading compact">
+          <p class="eyebrow">User order</p>
+          <h2>Place order</h2>
         </div>
         <form id="orderForm" class="stack-form">
           <label>
@@ -99,10 +253,10 @@
         <p id="orderMessage" class="status-text"></p>
       </section>
 
-      <section class="section panel shop-panel">
+      <section class="section panel">
         <div class="section-heading compact">
-          <p class="eyebrow">Shop area</p>
-          <h2>Shop inventory</h2>
+          <p class="eyebrow">Shop inventory</p>
+          <h2>Add product</h2>
         </div>
         <form id="productForm" class="stack-form">
           <label>
@@ -124,13 +278,12 @@
 
       <section class="section admin-panel">
         <div class="section-heading">
-          <p class="eyebrow">Admin records</p>
-          <h2>Account stacks and platform records</h2>
+          <p class="eyebrow">Admin dashboard</p>
+          <h2>Stack tables for accounts and verification</h2>
           <p class="lead small">
-            Admin can view all user accounts, mechanic-related shop accounts, and recent order records in structured tables.
+            User accounts, mechanic and shopkeeper accounts, and verification records all appear here for admin review.
           </p>
         </div>
-
         <div class="table-stack">
           <div class="table-card">
             <div class="table-header">
@@ -139,39 +292,35 @@
             </div>
             <div class="table-wrap">
               <table>
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Role</th>
-                    <th>Phone</th>
-                  </tr>
-                </thead>
+                <thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Phone</th></tr></thead>
                 <tbody id="userTableBody"></tbody>
               </table>
             </div>
           </div>
-
           <div class="table-card">
             <div class="table-header">
-              <h3>Mechanic and shop accounts</h3>
+              <h3>Mechanic and shopkeeper accounts</h3>
               <span id="shopCount" class="count-pill"></span>
             </div>
             <div class="table-wrap">
               <table>
-                <thead>
-                  <tr>
-                    <th>Shop</th>
-                    <th>Type</th>
-                    <th>Email</th>
-                    <th>Owner</th>
-                  </tr>
-                </thead>
+                <thead><tr><th>Shop</th><th>Type</th><th>Email</th><th>Owner</th></tr></thead>
                 <tbody id="shopTableBody"></tbody>
               </table>
             </div>
           </div>
-
+          <div class="table-card">
+            <div class="table-header">
+              <h3>Verification records</h3>
+              <span id="verificationCount" class="count-pill"></span>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Shop</th><th>Shop photo</th><th>Aadhaar</th><th>Status</th></tr></thead>
+                <tbody id="verificationTableBody"></tbody>
+              </table>
+            </div>
+          </div>
           <div class="table-card">
             <div class="table-header">
               <h3>Order records</h3>
@@ -179,23 +328,27 @@
             </div>
             <div class="table-wrap">
               <table>
-                <thead>
-                  <tr>
-                    <th>Shopper</th>
-                    <th>Product</th>
-                    <th>Qty</th>
-                    <th>Status</th>
-                  </tr>
-                </thead>
+                <thead><tr><th>Shopper</th><th>Product</th><th>Qty</th><th>Status</th></tr></thead>
                 <tbody id="orderTableBody"></tbody>
               </table>
             </div>
           </div>
         </div>
       </section>
+
+      <section class="section wide-panel" id="contact">
+        <div class="section-heading">
+          <p class="eyebrow">Contact</p>
+          <h2>Talk to Avenix</h2>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card"><h3>Email</h3><p>support@avenix.com</p></div>
+          <div class="contact-card"><h3>Phone</h3><p>+91 90000 12345</p></div>
+          <div class="contact-card"><h3>Office</h3><p>Local Business Hub, Chennai, India</p></div>
+        </div>
+      </section>
     </main>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>

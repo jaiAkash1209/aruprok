@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Original Street | Digital identity for local shops</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <nav class="topbar">
+        <div class="brand">Original Street</div>
+        <div class="nav-links">
+          <a href="#benefits">Benefits</a>
+          <a href="#stories">Stories</a>
+          <a href="#start">Start</a>
+        </div>
+      </nav>
+
+      <section class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Digitalize local shops without making them look generic</p>
+          <h1>The website concept that keeps every neighborhood shop original.</h1>
+          <p class="lead">
+            Help grocery stores, tailors, tea stalls, craft sellers, and family-run shops build an online identity
+            that still feels handmade, trusted, and local.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#start">Build a shop page</a>
+            <a class="button secondary" href="#stories">See live examples</a>
+          </div>
+          <ul class="hero-points">
+            <li>Show each shop's story, style, and specialty</li>
+            <li>Let customers discover products, timings, and offers instantly</li>
+            <li>Turn originality into a real online advantage</li>
+          </ul>
+        </div>
+
+        <div class="hero-card">
+          <div class="shop-window">
+            <div class="window-header">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            <div class="window-body">
+              <p class="shop-label">Featured local shop</p>
+              <h2>Rina's Spice Corner</h2>
+              <p>
+                Hand-ground masalas, seasonal pickles, and recipe bundles made from three generations of kitchen tradition.
+              </p>
+              <div class="tag-row">
+                <span>Family recipes</span>
+                <span>Same-day pickup</span>
+                <span>Festival specials</span>
+              </div>
+              <div class="stats">
+                <div>
+                  <strong>1,240</strong>
+                  <span>local views</span>
+                </div>
+                <div>
+                  <strong>84%</strong>
+                  <span>repeat buyers</span>
+                </div>
+                <div>
+                  <strong>4.9</strong>
+                  <span>customer rating</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="section benefits" id="benefits">
+        <div class="section-heading">
+          <p class="eyebrow">Why it matters</p>
+          <h2>Local businesses need visibility and identity at the same time.</h2>
+        </div>
+        <div class="benefit-grid">
+          <article class="benefit-card">
+            <h3>Digital shelf</h3>
+            <p>Every shop gets its own page with products, pricing, photos, and offers that are easy to update.</p>
+          </article>
+          <article class="benefit-card">
+            <h3>Original story</h3>
+            <p>Customers see who runs the shop, what makes it special, and why the community trusts it.</p>
+          </article>
+          <article class="benefit-card">
+            <h3>Simple orders</h3>
+            <p>People can message, call, or place a quick order without forcing the shop into a complex system.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section stories" id="stories">
+        <div class="section-heading">
+          <p class="eyebrow">Shop examples</p>
+          <h2>Different shops, different personalities.</h2>
+        </div>
+        <div class="story-grid">
+          <article class="story-card warm">
+            <h3>Tea stall</h3>
+            <p>Daily menu updates, evening crowd timings, and a photo-first page that feels familiar.</p>
+          </article>
+          <article class="story-card cool">
+            <h3>Tailor shop</h3>
+            <p>Measurements, stitching categories, delivery dates, and customer trust shown clearly.</p>
+          </article>
+          <article class="story-card earth">
+            <h3>Organic store</h3>
+            <p>Farm sources, weekly stock, and subscription baskets presented in a warm local tone.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section starter" id="start">
+        <div class="starter-copy">
+          <p class="eyebrow">Quick starter</p>
+          <h2>Create a sample shop identity</h2>
+          <p>
+            This demo form shows how a small business could turn its real-world character into a digital profile.
+          </p>
+        </div>
+
+        <form class="starter-form" id="shopForm">
+          <label>
+            Shop name
+            <input type="text" id="shopName" placeholder="Asha Bakery" required>
+          </label>
+          <label>
+            Shop type
+            <input type="text" id="shopType" placeholder="Bakery, grocery, tailoring" required>
+          </label>
+          <label>
+            What makes it original?
+            <textarea id="shopStory" rows="4" placeholder="Fresh bread from an old family recipe, known for custom birthday cakes"></textarea>
+          </label>
+          <button type="submit" class="button primary full">Generate shop idea</button>
+        </form>
+
+        <div class="preview-card" id="previewCard">
+          <p class="preview-label">Preview</p>
+          <h3>Your digital shop identity will appear here.</h3>
+          <p>Add a few details and this card will turn into a sample homepage summary.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

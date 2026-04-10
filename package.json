@@ -1,0 +1,12 @@
+{
+  "name": "original-street",
+  "version": "1.0.0",
+  "description": "Full-stack website for helping local shops build a digital identity.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

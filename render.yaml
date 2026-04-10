@@ -1,9 +1,9 @@
 services:
   - type: web
     name: original-street
-    runtime: static
-    buildCommand: "true"
-    staticPublishPath: .
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
     headers:
       - path: /*
         name: X-Frame-Options

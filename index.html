@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Original Street | Digital identity for local shops</title>
+  <title>Avenix</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
@@ -13,143 +13,184 @@
   <div class="page-shell">
     <header class="hero">
       <nav class="topbar">
-        <div class="brand">Original Street</div>
-        <div class="nav-links">
-          <a href="#benefits">Benefits</a>
-          <a href="#stories">Stories</a>
-          <a href="#start">Start</a>
+        <div class="brand">Avenix</div>
+        <div class="topbar-actions">
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
+            <span class="sun-icon">☀</span>
+            <span class="moon-icon">☾</span>
+          </button>
         </div>
       </nav>
 
       <section class="hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Digitalize local shops without making them look generic</p>
-          <h1>The website concept that keeps every neighborhood shop original.</h1>
+          <p class="eyebrow">Digital hub for local businesses</p>
+          <h1>One place for admin, users, and shops to stay connected.</h1>
           <p class="lead">
-            Help grocery stores, tailors, tea stalls, craft sellers, and family-run shops build an online identity
-            that still feels handmade, trusted, and local.
+            This app gives local shops and service centers a shared system where shoppers can order, shops can manage
+            products, and admins can see all account records in clean stack-style tables.
           </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#start">Build a shop page</a>
-            <a class="button secondary" href="#stories">See live examples</a>
+          <div class="role-pills">
+            <span>Admin control</span>
+            <span>User login</span>
+            <span>Shop login</span>
           </div>
-          <ul class="hero-points">
-            <li>Show each shop's story, style, and specialty</li>
-            <li>Let customers discover products, timings, and offers instantly</li>
-            <li>Turn originality into a real online advantage</li>
-          </ul>
         </div>
 
-        <div class="hero-card">
-          <div class="shop-window">
-            <div class="window-header">
-              <span class="dot"></span>
-              <span class="dot"></span>
-              <span class="dot"></span>
-            </div>
-            <div class="window-body">
-              <p class="shop-label">Featured local shop</p>
-              <h2>Rina's Spice Corner</h2>
-              <p>
-                Hand-ground masalas, seasonal pickles, and recipe bundles made from three generations of kitchen tradition.
-              </p>
-              <div class="tag-row">
-                <span>Family recipes</span>
-                <span>Same-day pickup</span>
-                <span>Festival specials</span>
-              </div>
-              <div class="stats">
-                <div>
-                  <strong>1,240</strong>
-                  <span>local views</span>
-                </div>
-                <div>
-                  <strong>84%</strong>
-                  <span>repeat buyers</span>
-                </div>
-                <div>
-                  <strong>4.9</strong>
-                  <span>customer rating</span>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="login-card">
+          <p class="card-label">Login portal</p>
+          <h2>Choose how you want to enter</h2>
+          <form id="loginForm" class="login-form">
+            <label>
+              Role
+              <select id="role" required>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+                <option value="shop">Shop</option>
+              </select>
+            </label>
+            <label>
+              Email
+              <input id="email" type="email" placeholder="admin@avenix.com" required>
+            </label>
+            <label>
+              Password
+              <input id="password" type="password" placeholder="Enter password" required>
+            </label>
+            <button class="button primary full" type="submit">Login</button>
+          </form>
+          <p class="helper-text">
+            Demo access: admin `admin@avenix.com`, user `aarav@market.com`, shop `fixfast@shops.com`
+          </p>
+          <p id="loginMessage" class="status-text"></p>
         </div>
       </section>
     </header>
 
-    <main>
-      <section class="section benefits" id="benefits">
-        <div class="section-heading">
-          <p class="eyebrow">Why it matters</p>
-          <h2>Local businesses need visibility and identity at the same time.</h2>
+    <main class="dashboard-grid">
+      <section class="section panel shopper-panel">
+        <div class="section-heading compact">
+          <p class="eyebrow">User area</p>
+          <h2>Shopper storefront</h2>
         </div>
-        <div class="benefit-grid">
-          <article class="benefit-card">
-            <h3>Digital shelf</h3>
-            <p>Every shop gets its own page with products, pricing, photos, and offers that are easy to update.</p>
-          </article>
-          <article class="benefit-card">
-            <h3>Original story</h3>
-            <p>Customers see who runs the shop, what makes it special, and why the community trusts it.</p>
-          </article>
-          <article class="benefit-card">
-            <h3>Simple orders</h3>
-            <p>People can message, call, or place a quick order without forcing the shop into a complex system.</p>
-          </article>
-        </div>
+        <div class="catalog-grid" id="catalogGrid"></div>
       </section>
 
-      <section class="section stories" id="stories">
-        <div class="section-heading">
-          <p class="eyebrow">Shop examples</p>
-          <h2>Different shops, different personalities.</h2>
+      <section class="section panel">
+        <div class="section-heading compact">
+          <p class="eyebrow">Place order</p>
+          <h2>User order form</h2>
         </div>
-        <div class="story-grid">
-          <article class="story-card warm">
-            <h3>Tea stall</h3>
-            <p>Daily menu updates, evening crowd timings, and a photo-first page that feels familiar.</p>
-          </article>
-          <article class="story-card cool">
-            <h3>Tailor shop</h3>
-            <p>Measurements, stitching categories, delivery dates, and customer trust shown clearly.</p>
-          </article>
-          <article class="story-card earth">
-            <h3>Organic store</h3>
-            <p>Farm sources, weekly stock, and subscription baskets presented in a warm local tone.</p>
-          </article>
-        </div>
+        <form id="orderForm" class="stack-form">
+          <label>
+            Shopper name
+            <input id="customerName" type="text" placeholder="Aarav Kumar" required>
+          </label>
+          <label>
+            Product
+            <select id="productSelect" required></select>
+          </label>
+          <label>
+            Quantity
+            <input id="quantity" type="number" min="1" value="1" required>
+          </label>
+          <button class="button primary full" type="submit">Place order</button>
+        </form>
+        <p id="orderMessage" class="status-text"></p>
       </section>
 
-      <section class="section starter" id="start">
-        <div class="starter-copy">
-          <p class="eyebrow">Quick starter</p>
-          <h2>Create a sample shop identity</h2>
-          <p>
-            This demo form shows how a small business could turn its real-world character into a digital profile.
+      <section class="section panel shop-panel">
+        <div class="section-heading compact">
+          <p class="eyebrow">Shop area</p>
+          <h2>Shop inventory</h2>
+        </div>
+        <form id="productForm" class="stack-form">
+          <label>
+            Product name
+            <input id="productName" type="text" placeholder="Brake wire" required>
+          </label>
+          <label>
+            Price
+            <input id="productPrice" type="number" min="1" placeholder="450" required>
+          </label>
+          <label>
+            Category
+            <input id="productCategory" type="text" placeholder="Mechanic parts" required>
+          </label>
+          <button class="button secondary full" type="submit">Add product</button>
+        </form>
+        <div class="mini-stack" id="shopOrderStack"></div>
+      </section>
+
+      <section class="section admin-panel">
+        <div class="section-heading">
+          <p class="eyebrow">Admin records</p>
+          <h2>Account stacks and platform records</h2>
+          <p class="lead small">
+            Admin can view all user accounts, mechanic-related shop accounts, and recent order records in structured tables.
           </p>
         </div>
 
-        <form class="starter-form" id="shopForm">
-          <label>
-            Shop name
-            <input type="text" id="shopName" placeholder="Asha Bakery" required>
-          </label>
-          <label>
-            Shop type
-            <input type="text" id="shopType" placeholder="Bakery, grocery, tailoring" required>
-          </label>
-          <label>
-            What makes it original?
-            <textarea id="shopStory" rows="4" placeholder="Fresh bread from an old family recipe, known for custom birthday cakes"></textarea>
-          </label>
-          <button type="submit" class="button primary full">Generate shop idea</button>
-        </form>
+        <div class="table-stack">
+          <div class="table-card">
+            <div class="table-header">
+              <h3>User accounts</h3>
+              <span id="userCount" class="count-pill"></span>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Phone</th>
+                  </tr>
+                </thead>
+                <tbody id="userTableBody"></tbody>
+              </table>
+            </div>
+          </div>
 
-        <div class="preview-card" id="previewCard">
-          <p class="preview-label">Preview</p>
-          <h3>Your digital shop identity will appear here.</h3>
-          <p>Add a few details and this card will turn into a sample homepage summary.</p>
+          <div class="table-card">
+            <div class="table-header">
+              <h3>Mechanic and shop accounts</h3>
+              <span id="shopCount" class="count-pill"></span>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Shop</th>
+                    <th>Type</th>
+                    <th>Email</th>
+                    <th>Owner</th>
+                  </tr>
+                </thead>
+                <tbody id="shopTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="table-card">
+            <div class="table-header">
+              <h3>Order records</h3>
+              <span id="orderCount" class="count-pill"></span>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Shopper</th>
+                    <th>Product</th>
+                    <th>Qty</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="orderTableBody"></tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </section>
     </main>
